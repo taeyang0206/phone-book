@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const phoneSchema = new mongoose.Schema(
+const numberSchema = new mongoose.Schema(
     {
         name:
         {
@@ -23,6 +23,6 @@ const phoneSchema = new mongoose.Schema(
 )
 
 // 스카마를 모델로 변환
-const Phone = mongoose.model("Phone", phoneSchema);
+const Number = mongoose.model("Number", numberSchema);
 
-module.exports = Phone;
+module.exports = Number;
