@@ -1,40 +1,44 @@
 const express = require("express");
 
 const app = express();
+const router = express.Router();
 
 app.get("/", (req, res) =>
 {
     res.send("Hello Node");
 });
 
-// 전체 연락처 가져오기
-app.get("/contacts", (req, res) =>
-{
-    res.send("Contects Page");
-});
+router.route("/Phonebook")
+    .get((req, res) =>
+    {
+        // 전체 연락처 가져오기
+        res.send("All imformation");
+    })
+    .post((req, res) =>
+    {
+        //연락처 생성하기
+        res.send("Create imformation");
+    });
 
-// 특정 연락처 가져오기
-app.get("/contacts/:id", (req, res) =>
-{
-    res.send(`View Imformation for ID : ${req.params.id}`)
-})
-// 새로운 연락처 등록하기
-app.post("/contacts", (req, res) =>
-{
-    res.send("Create Contacts");
-});
+router.route("/Phonebook/:id")
+    .get((req, res) =>
+    {
+        // 특정 연락처 가져오기
+        res.send(`View ${req.params.id} imformation`)
+    })
+    .put((req, res) =>
+    {
+        // 특정 연락처 수정하기
+        res.send(`update ${req.params.id} imformation`)
+    })
+    .delete((req, res) =>
+    {
+        // 특정 연락처 삭제하기
+        res.send(`Delete ${req.params.id} imformation`)
+    });
 
-// 특정 연락처 수정하기
-app.put("/contacts/:id", (req, res) =>
-{
-    res.send(`Update Imformation for ID : ${req.params.id}`);
-});
-
-// 특정 연락처 삭제하기
-app.delete("/contacts/:id", (req, res) =>
-{
-    res.send(`Delete Imformation for ID : ${req.params.id}`);
-});
+// router 미들웨어를 사용했다는 것을 알려줌
+app.use(router);
 
 app.listen(3000, () => 
 {
