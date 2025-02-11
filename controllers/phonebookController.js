@@ -20,7 +20,6 @@ const addNumberForm = (req, res) =>
 // 전화번호 추가하기
 const addNumber = asyncHandler(async (req, res) =>
 {
-    console.log(req.body);
     const { name, email, phone } = req.body;
     if(!name || !email || !phone)
     {
