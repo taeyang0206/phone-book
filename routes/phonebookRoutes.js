@@ -13,10 +13,10 @@ const
 
 router.route("/phonebook")
     .get(getAllNumber)
-    .post(addNumber);
 
 router.route("/phonebook/add")
-    .get(addNumberForm);
+    .get(addNumberForm)
+    .post(addNumber);
 
 
 router.route("/phonebook/:id")
