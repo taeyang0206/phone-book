@@ -75,7 +75,7 @@ const deleteNumber = asyncHandler(async (req, res) =>
     
     const target = await Number.findByIdAndDelete(id);
 
-    res.send("Success Delete Target");
+    res.redirect("/phonebook");
 })
 
 module.exports = { 
