@@ -170,6 +170,49 @@ input:focus {
   background: rgba(0, 0, 0, 0.5);
 }
 
+/* ✏️ 수정 버튼 스타일 */
+.edit-btn {
+  background: linear-gradient(135deg, #FFD54F, #FFB300);
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #FFB300, #FFD54F);
+  transform: scale(1.1);
+}
+
+
+/* ✏️ 연락처 수정 페이지 스타일 */
+.submit-btn {
+  background: linear-gradient(135deg, #4CAF50, #66BB6A);
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #66BB6A, #4CAF50);
+  transform: scale(1.05);
+}
+
 /* 📱 반응형 디자인 */
 @media screen and (max-width: 768px) {
   .container {

@@ -26,8 +26,9 @@
                         <td><%= number.phone %></td>
                         <td><%= number.email %></td>
                         <td>
+                            <a href="/phonebook/<%= number._id %>" class="edit-btn">✏️ 수정</a>
                             <form action="/delete/<%= number.id %>" method="POST">
-                                <button class="delete-btn" type="submit">삭제</button>
+                                <button class="delete-btn" type="submit">🗑️ 삭제</button>
                             </form>
                         </td>
                     </tr>

@@ -37,14 +37,13 @@ const addNumber = asyncHandler(async (req, res) =>
 // 특정 전화번호 가져오기
 const getNumber = asyncHandler(async (req, res) =>
 {
-    const phonebook = await Number.findById(req.params.id);
+    const number = await Number.findById(req.params.id);
     
-    if(phonebook === null)
+    if(number === null)
     {
         throw new Error("not found target");
     }
-
-    res.json(phonebook);
+    res.render("update", { number : number });
 });
 
 // 특정 연락처 수정하기
@@ -66,7 +65,7 @@ const updateNumber = asyncHandler(async (req, res) =>
     
     target.save();
 
-    res.json(target);
+    res.redirect("/phonebook");
 });
 
 // 특정 연락처 삭제하기기
