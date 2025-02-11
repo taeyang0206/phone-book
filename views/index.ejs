@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전화번호부</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📞 전화번호부</h1>
+        <button class="add-btn" onclick="location.href='/phonebook/add'">연락처 추가</button>
+        <table>
+            <thead>
+                <tr>
+                    <th>이름</th>
+                    <th>전화번호</th>
+                    <th>이메일</th>
+                    <th>삭제</th>
+                </tr>
+            </thead>
+            <tbody>
+                <% numbers.forEach(number => { %>
+                    <tr>
+                        <td><%= number.name %></td>
+                        <td><%= number.phone %></td>
+                        <td><%= number.email %></td>
+                        <td>
+                            <form action="/delete/<%= number.id %>" method="POST">
+                                <button class="delete-btn" type="submit">삭제</button>
+                            </form>
+                        </td>
+                    </tr>
+                <% }) %>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
