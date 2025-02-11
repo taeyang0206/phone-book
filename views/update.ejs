@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>연락처 수정</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <a href="/phonebook" class="back-btn">← 연락처 목록</a> <!-- 뒤로가기 버튼 -->
+    <div class="container">
+        <h1>✏️ 연락처 수정</h1>
+        <form action="/phonebook/<%= number.id %>?_method=PUT" method="POST">
+            <label for="name">이름</label>
+            <input type="text" id="name" name="name" value="<%= number.name %>" required>
+
+            <label for="phone">전화번호</label>
+            <input type="tel" id="phone" name="phone" value="<%= number.phone %>" required>
+
+            <label for="email">이메일</label>
+            <input type="email" id="email" name="email" value="<%= number.email %>" required>
+
+            <button type="submit" class="submit-btn">💾 수정하기</button>
+        </form>
+    </div>
+</body>
+</html>
