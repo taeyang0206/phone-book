@@ -7,9 +7,15 @@ const Number = require("../models/phoneModels");
 // 모든 전화번호 가져오기
 const getAllNumber = asyncHandler(async (req, res) =>
 {
-    const number = await Number.find();
-    res.json(number);
+    const numbers = await Number.find();
+    res.render("index", { numbers : numbers });
 }); 
+
+// 추가하는 폼 보여주기
+const addNumberForm = (req, res) =>
+{
+    res.render("add");
+}
 
 // 전화번호 추가하기
 const addNumber = asyncHandler(async (req, res) =>
@@ -74,4 +80,11 @@ const deleteNumber = asyncHandler(async (req, res) =>
     res.send("Success Delete Target");
 })
 
-module.exports = { getAllNumber, addNumber, getNumber, updateNumber, deleteNumber };
+module.exports = { 
+    getAllNumber, 
+    addNumberForm, 
+    addNumber, 
+    getNumber, 
+    updateNumber, 
+    deleteNumber 
+};

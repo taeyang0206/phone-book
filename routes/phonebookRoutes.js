@@ -4,6 +4,7 @@ const router = express.Router();
 const 
 { 
     getAllNumber, 
+    addNumberForm,
     addNumber, 
     getNumber, 
     updateNumber, 
@@ -13,6 +14,10 @@ const
 router.route("/phonebook")
     .get(getAllNumber)
     .post(addNumber);
+
+router.route("/phonebook/add")
+    .get(addNumberForm);
+
 
 router.route("/phonebook/:id")
     .get(getNumber)

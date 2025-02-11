@@ -1,0 +1,201 @@
+/* 🌟 전체 페이지 스타일 */
+body {
+  font-family: 'Pretendard', sans-serif;
+  background: linear-gradient(120deg, #a1c4fd, #c2e9fb); /* 블루-스카이블루 그라데이션 */
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* 반응형을 위해 height 변경 */
+}
+
+/* 📌 연락처 추가 버튼 (화면 오른쪽 상단 고정) */
+.add-btn {
+  position: fixed; /* 화면에 고정 */
+  top: 20px;
+  right: 20px; /* 오른쪽 상단 위치 */
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  z-index: 1000; /* 다른 요소 위에 배치 */
+}
+
+/* ➕ 아이콘 스타일 */
+.add-btn::before {
+  content: "➕";
+  margin-right: 8px;
+}
+
+/* 버튼 호버 효과 */
+.add-btn:hover {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  transform: scale(1.05);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 📋 컨테이너 스타일 (목록 & 추가 페이지 공통) */
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: white;
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  transition: 0.3s;
+}
+
+/* 📋 테이블 스타일 */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #f9f9f9;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 50px; /* 버튼과 표 사이 간격 */
+}
+
+/* 테이블 헤더 */
+th {
+  background: #4A90E2;
+  color: white;
+  padding: 12px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* 테이블 데이터 */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+}
+
+/* 🗑 삭제 버튼 */
+.delete-btn {
+  background: #ff4d4d;
+  padding: 8px 15px;
+  border: none;
+  color: white;
+  font-size: 14px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.delete-btn:hover {
+  background: #cc0000;
+  transform: scale(1.1);
+}
+
+/* 📌 연락처 추가 페이지 스타일 */
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-top: 15px;
+  align-self: flex-start;
+  color: #444;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+input:focus {
+  border-color: #4A90E2;
+  outline: none;
+}
+
+/* 📌 추가하기 버튼 */
+.submit-btn {
+  background: linear-gradient(135deg, #ff758c, #ff7eb3);
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.submit-btn:hover {
+  background: linear-gradient(135deg, #ff7eb3, #ff758c);
+  transform: scale(1.05);
+}
+
+/* 🔙 뒤로가기 버튼 */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* 📱 반응형 디자인 */
+@media screen and (max-width: 768px) {
+  .container {
+      width: 95%;
+  }
+
+  .add-btn {
+      font-size: 14px;
+      padding: 10px 15px;
+      top: 10px;
+      right: 10px;
+  }
+
+  .back-btn {
+      font-size: 14px;
+      padding: 8px 12px;
+      top: 10px;
+      left: 10px;
+  }
+
+  table {
+      font-size: 12px;
+  }
+
+  .delete-btn {
+      font-size: 12px;
+      padding: 6px 12px;
+  }
+}
