@@ -13,8 +13,7 @@ dbConnect();
 
 app.get("/", (req, res) =>
 {
-    res.render("index");
-    res.send("Hello Node");
+    res.render("home");
 });
 
 // json, url 바디파서를 사용한다는 선언
