@@ -31,7 +31,7 @@ const addNumber = asyncHandler(async (req, res) =>
             name, email, phone
         }
     );
-    res.send("Create imformation");
+    res.redirect("/phonebook");
 });
 
 // 특정 전화번호 가져오기
@@ -68,7 +68,7 @@ const updateNumber = asyncHandler(async (req, res) =>
     res.redirect("/phonebook");
 });
 
-// 특정 연락처 삭제하기기
+// 특정 연락처 삭제하기
 const deleteNumber = asyncHandler(async (req, res) =>
 {
     const id = req.params.id;
