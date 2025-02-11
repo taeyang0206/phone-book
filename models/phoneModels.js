@@ -11,10 +11,10 @@ const numberSchema = new mongoose.Schema(
         {
             type: String,
         },
-        phoneSchema:
+        phone:
         {
             type: String,
-            required: [true, "이름은 필수 입력 항목입니다다."]
+            required: [true, "전화번호는 필수 입력 항목입니다."]
         }
     },
     {

@@ -2,11 +2,13 @@
 
 //asyncHandler : 에러를 체크해주는 모듈 
 const asyncHandler = require("express-async-handler");
+const Number = require("../models/phoneModels");
 
 // 모든 전화번호 가져오기
 const getAllNumber = asyncHandler(async (req, res) =>
 {
-    res.send("All Imformation");
+    const number = await Number.find();
+    res.json(number);
 }); 
 
 // 전화번호 추가하기
@@ -18,25 +20,58 @@ const addNumber = asyncHandler(async (req, res) =>
     {
         return res.send("필수 입력 값이 비어있습니다.");
     }
+
+    const number = await Number.create(
+        {
+            name, email, phone
+        }
+    );
     res.send("Create imformation");
 });
 
 // 특정 전화번호 가져오기
 const getNumber = asyncHandler(async (req, res) =>
 {
-    res.send(`View ${req.params.id} imformation`);
+    const phonebook = await Number.findById(req.params.id);
+    
+    if(phonebook === null)
+    {
+        throw new Error("not found target");
+    }
+
+    res.json(phonebook);
 });
 
 // 특정 연락처 수정하기
 const updateNumber = asyncHandler(async (req, res) =>
 {
-    res.send(`update ${req.params.id} imformation`);
-})
+    const id = req.params.id;
+    const { name, email, phone } = req.body;
+
+    const target = await Number.findById(id);
+    
+    if(!target)
+    {
+        throw new Error("can't find target");
+    }
+
+    target.name = name;
+    target.email = email;
+    target.phone = phone;
+    
+    target.save();
+
+    res.json(target);
+});
 
 // 특정 연락처 삭제하기기
 const deleteNumber = asyncHandler(async (req, res) =>
 {
-    res.send(`Delete ${req.params.id} imformation`);
+    const id = req.params.id;
+    
+    const target = await Number.findByIdAndDelete(id);
+
+    res.send("Success Delete Target");
 })
 
 module.exports = { getAllNumber, addNumber, getNumber, updateNumber, deleteNumber };
