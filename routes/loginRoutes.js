@@ -5,7 +5,8 @@ const
 {
     getLogin,
     loginUser,
-    getSignin
+    getSignin,
+    registerUser
 }= require("../controllers/loginController");
 
 router.route("/")
@@ -14,5 +15,5 @@ router.route("/")
 
 router.route("/register")
     .get(getSignin)
-
+    .post(registerUser)
 module.exports = router;
