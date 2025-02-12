@@ -6,4 +6,9 @@ const getLogin = (req, res) =>
     res.render("home");
 };
 
-module.exports = getLogin;
+const loginUser = asyncHandler(async (req, res) =>
+{
+    const { userId, password } = req.body;
+});
+
+module.exports = { getLogin, loginUser };
