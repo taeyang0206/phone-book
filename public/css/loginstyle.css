@@ -1,0 +1,137 @@
+/* 🌟 전체 페이지 스타일 */
+body {
+    font-family: 'Pretendard', sans-serif;
+    background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* 🔑 로그인 & 회원가입 페이지 배경 */
+  .auth-body {
+    font-family: 'Pretendard', sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  /* 🔑 로그인 & 회원가입 컨테이너 */
+  .auth-container {
+    width: 90%;
+    max-width: 420px;
+    background: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  /* 로그인 & 회원가입 제목 */
+  .auth-container h1 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 25px;
+  }
+  
+  /* 입력 필드 스타일 */
+  .auth-container label {
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 18px;
+    align-self: flex-start;
+    color: #444;
+  }
+  
+  .auth-container input {
+    width: 95%;
+    padding: 14px;
+    font-size: 16px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    transition: 0.3s;
+  }
+  
+  .auth-container input:focus {
+    border-color: #4A90E2;
+    outline: none;
+  }
+  
+  /* 🔑 로그인 버튼 */
+  .login-btn {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 16px 22px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 95%;
+    margin-top: 25px;
+  }
+  
+  .login-btn:hover {
+    background: linear-gradient(135deg, #764ba2, #667eea);
+    transform: scale(1.05);
+  }
+  
+  /* 📝 회원가입 버튼 */
+  .register-btn {
+    background: linear-gradient(135deg, #42A5F5, #1E88E5);
+    color: white;
+    padding: 16px 22px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 95%;
+    margin-top: 25px;
+  }
+  
+  .register-btn:hover {
+    background: linear-gradient(135deg, #1E88E5, #42A5F5);
+    transform: scale(1.05);
+  }
+  
+  /* ❌ 비밀번호 불일치 경고 메시지 */
+  .error-message {
+    color: red;
+    font-size: 14px;
+    text-align: left;
+    width: 95%;
+    margin-top: 5px;
+  }
+  
+  /* 📢 로그인 & 회원가입 페이지 이동 링크 */
+  .redirect-text {
+    font-size: 14px;
+    margin-top: 15px;
+  }
+  
+  .redirect-text a {
+    color: #1E88E5;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .redirect-text a:hover {
+    text-decoration: underline;
+  }
+  
+  /* 📱 반응형 디자인 */
+  @media screen and (max-width: 768px) {
+    .auth-container {
+      width: 95%;
+      padding: 35px;
+    }
+  }
+  
