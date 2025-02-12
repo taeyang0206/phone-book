@@ -1,24 +1,24 @@
 /* 🌟 전체 페이지 스타일 */
 body {
   font-family: 'Pretendard', sans-serif;
-  background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+  background: linear-gradient(120deg, #a1c4fd, #c2e9fb); /* 블루-스카이블루 그라데이션 */
   margin: 0;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  min-height: 100vh; /* 반응형을 위해 height 변경 */
 }
 
 /* 📌 연락처 추가 버튼 (화면 오른쪽 상단 고정) */
 .add-btn {
-  position: fixed;
+  position: fixed; /* 화면에 고정 */
   top: 20px;
-  right: 20px;
+  right: 20px; /* 오른쪽 상단 위치 */
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   color: white;
-  padding: 14px 24px;
-  font-size: 18px;
+  padding: 12px 20px;
+  font-size: 16px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -27,29 +27,32 @@ body {
   align-items: center;
   font-weight: 500;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
-  z-index: 1000;
+  z-index: 1000; /* 다른 요소 위에 배치 */
 }
 
+/* ➕ 아이콘 스타일 */
 .add-btn::before {
   content: "➕";
-  margin-right: 10px;
+  margin-right: 8px;
 }
 
+/* 버튼 호버 효과 */
 .add-btn:hover {
   background: linear-gradient(135deg, #ff7eb3, #ff758c);
   transform: scale(1.05);
   box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* 📋 컨테이너 스타일 */
+/* 📋 컨테이너 스타일 (목록 & 추가 페이지 공통) */
 .container {
   width: 90%;
   max-width: 600px;
   background: white;
-  padding: 30px;
+  padding: 25px;
   border-radius: 15px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
+  transition: 0.3s;
 }
 
 /* 📋 테이블 스타일 */
@@ -60,33 +63,36 @@ table {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
-  margin-top: 50px;
+  margin-top: 50px; /* 버튼과 표 사이 간격 */
 }
 
+/* 테이블 헤더 */
 th {
   background: #4A90E2;
   color: white;
-  padding: 14px;
-  font-size: 16px;
+  padding: 12px;
+  font-size: 14px;
   font-weight: 600;
 }
 
+/* 테이블 데이터 */
 td {
-  padding: 14px;
+  padding: 12px;
   border-bottom: 1px solid #ddd;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 /* 🗑 삭제 버튼 */
 .delete-btn {
   background: #ff4d4d;
-  padding: 10px 18px;
+  padding: 8px 15px;
   border: none;
   color: white;
-  font-size: 16px;
+  font-size: 14px;
   border-radius: 20px;
   cursor: pointer;
   transition: 0.3s;
+  font-weight: 500;
 }
 
 .delete-btn:hover {
@@ -94,7 +100,7 @@ td {
   transform: scale(1.1);
 }
 
-/* 📌 입력 폼 스타일 */
+/* 📌 입력 폼 스타일 (추가 & 수정 페이지 공통) */
 form {
   display: flex;
   flex-direction: column;
@@ -102,20 +108,20 @@ form {
 }
 
 label {
-  font-size: 16px;
+  font-size: 14px;
   font-weight: bold;
-  margin-top: 18px;
+  margin-top: 15px;
   align-self: flex-start;
   color: #444;
 }
 
 input {
-  width: 95%;
-  padding: 14px;
-  margin-top: 8px;
+  width: 100%;
+  padding: 12px;
+  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 14px;
   transition: 0.3s;
 }
 
@@ -128,8 +134,8 @@ input:focus {
 .submit-btn {
   background: linear-gradient(135deg, #ff758c, #ff7eb3);
   color: white;
-  padding: 14px 22px;
-  font-size: 18px;
+  padding: 12px 20px;
+  font-size: 16px;
   border: none;
   border-radius: 30px;
   cursor: pointer;
@@ -137,13 +143,60 @@ input:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95%;
-  margin-top: 25px;
+  width: 100%;
+  margin-top: 20px;
 }
 
 .submit-btn:hover {
   background: linear-gradient(135deg, #ff7eb3, #ff758c);
   transform: scale(1.05);
+}
+
+/* 🔙 뒤로가기 버튼 */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* ✏️ 수정 버튼 스타일 */
+.edit-btn {
+  background: linear-gradient(135deg, #FFD54F, #FFB300);
+  color: white;
+  padding: 8px 15px;
+  font-size: 14px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #FFB300, #FFD54F);
+  transform: scale(1.1);
+}
+
+/* ✏️ 연락처 수정 페이지 버튼 스타일 */
+.submit-btn.edit {
+  background: linear-gradient(135deg, #4CAF50, #66BB6A);
+}
+
+.submit-btn.edit:hover {
+  background: linear-gradient(135deg, #66BB6A, #4CAF50);
 }
 
 /* 🔑 로그인 페이지 배경 */
@@ -161,31 +214,58 @@ input:focus {
 /* 🔑 로그인 박스 스타일 */
 .login-container {
   width: 90%;
-  max-width: 420px;
+  max-width: 400px;
   background: white;
-  padding: 40px;
+  padding: 30px;
   border-radius: 15px;
   box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
 
-/* 로그인 제목 크기 키우기 */
-.login-container h1 {
-  font-size: 28px;
-  color: #333;
-  margin-bottom: 25px;
-}
-
-/* 로그인 입력 필드 크기 증가 */
-.login-container input {
-  width: 95%;
-  padding: 16px;
-  font-size: 18px;
-}
-
-/* 로그인 버튼 크기 증가 */
+/* 로그인 버튼 스타일 */
 .login-btn {
   background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.login-btn:hover {
+  background: linear-gradient(135deg, #764ba2, #667eea);
+  transform: scale(1.05);
+}
+
+/* 🔗 회원가입 이동 버튼 (로그인 화면 아래 배치) */
+.register-link-btn {
+  background: none;
+  border: 2px solid #1E88E5;
+  color: #1E88E5;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+.register-link-btn:hover {
+  background: #1E88E5;
+  color: white;
+  transform: scale(1.05);
+}
+
+
+/* 🔑 회원가입 버튼 스타일 (로그인 버튼과 동일) */
+.register-btn {
+  background: linear-gradient(135deg, #42A5F5, #1E88E5);
   color: white;
   padding: 16px 22px;
   font-size: 18px;
@@ -197,9 +277,41 @@ input:focus {
   margin-top: 25px;
 }
 
-.login-btn:hover {
-  background: linear-gradient(135deg, #764ba2, #667eea);
+.register-btn:hover {
+  background: linear-gradient(135deg, #1E88E5, #42A5F5);
   transform: scale(1.05);
+}
+
+/* 🔑 회원가입 입력 필드 크기 및 디자인 */
+.login-container input {
+  width: 95%;
+  padding: 16px;
+  font-size: 18px;
+}
+
+/* ❌ 비밀번호 불일치 경고 메시지 */
+.error-message {
+  color: red;
+  font-size: 14px;
+  text-align: left;
+  width: 95%;
+  margin-top: 5px;
+}
+
+/* 📢 로그인 페이지로 이동하는 링크 */
+.redirect-text {
+  font-size: 14px;
+  margin-top: 15px;
+}
+
+.redirect-text a {
+  color: #1E88E5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.redirect-text a:hover {
+  text-decoration: underline;
 }
 
 /* 📱 반응형 디자인 */
@@ -209,23 +321,25 @@ input:focus {
   }
 
   .add-btn {
-    font-size: 16px;
-    padding: 12px 18px;
-    top: 15px;
-    right: 15px;
+    font-size: 14px;
+    padding: 10px 15px;
+    top: 10px;
+    right: 10px;
   }
 
-  .login-container {
-    width: 95%;
-    padding: 35px;
+  .back-btn {
+    font-size: 14px;
+    padding: 8px 12px;
+    top: 10px;
+    left: 10px;
   }
 
   table {
-    font-size: 14px;
+    font-size: 12px;
   }
 
   .delete-btn {
-    font-size: 14px;
-    padding: 10px 15px;
+    font-size: 12px;
+    padding: 6px 12px;
   }
 }

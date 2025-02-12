@@ -11,4 +11,9 @@ const loginUser = asyncHandler(async (req, res) =>
     const { userId, password } = req.body;
 });
 
-module.exports = { getLogin, loginUser };
+const getSignin = (req, res) =>
+{
+    res.render("register");
+};
+
+module.exports = { getLogin, loginUser, getSignin };

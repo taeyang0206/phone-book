@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="login-body">
+    <div class="login-container">
+        <h1>📝 회원가입</h1>
+        <form action="/register" method="POST" onsubmit="return validatePassword()">
+            <label for="username">아이디</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="password">비밀번호</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">비밀번호 확인</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <p id="password-error" class="error-message"></p>
+
+            <button type="submit" class="register-btn">회원가입</button>
+        </form>
+        <p class="redirect-text">이미 계정이 있나요? <a href="/login">로그인</a></p>
+    </div>
+    
+    <script>
+        function validatePassword() {
+            let password = document.getElementById("password").value;
+            let confirmPassword = document.getElementById("confirm-password").value;
+            let errorMessage = document.getElementById("password-error");
+
+            if (password !== confirmPassword) {
+                errorMessage.textContent = "비밀번호가 일치하지 않습니다!";
+                return false;
+            }
+            errorMessage.textContent = "";
+            return true;
+        }
+    </script>
+</body>
+</html>
