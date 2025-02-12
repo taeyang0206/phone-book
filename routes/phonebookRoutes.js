@@ -11,15 +11,15 @@ const
     deleteNumber 
 } = require("../controllers/phonebookController");
 
-router.route("/phonebook")
+router.route("/")
     .get(getAllNumber)
 
-router.route("/phonebook/add")
+router.route("/add")
     .get(addNumberForm)
     .post(addNumber);
 
 
-router.route("/phonebook/:id")
+router.route("/:id")
     .get(getNumber)
     .put(updateNumber)
     .delete(deleteNumber);
